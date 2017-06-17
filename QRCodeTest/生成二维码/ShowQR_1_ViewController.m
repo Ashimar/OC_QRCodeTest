@@ -32,7 +32,7 @@
     
 //     normalView.image = [QRCodeGenerator qrImageForString:@"这只是一个测试" imageSize:240];
     
-    normalView.image = [CreateQRManager showQRCodeWithDataStr:@"我是二维码" andLogo:@"hh1" logoScaleToSuperView:0.2];
+    normalView.image = [CreateQRManager showQRCodeWithDataStr:@"http://blog.csdn.net/ashimar_a" andLogo:@"hh1" logoScaleToSuperView:0.2];
     
     UILongPressGestureRecognizer *longGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longTouchAction:)];
     normalView.userInteractionEnabled = YES;
@@ -45,7 +45,8 @@
 - (void)longTouchAction:(UIGestureRecognizer *)sender {
     NSString *resultOfQR = [CreateQRManager touchQRImageGetStringWithImage:normalView.image];
     NSLog(@"识别二维码的内容为：%@",resultOfQR);
-    label.text = [NSString stringWithFormat:@"识别二维码的内容为：%@",resultOfQR];
+    label.text = resultOfQR;
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:resultOfQR]];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

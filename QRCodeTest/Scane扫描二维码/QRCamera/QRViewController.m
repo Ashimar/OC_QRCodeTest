@@ -122,7 +122,7 @@
     // 添加文字提示
     UILabel *warnnigLabel = [[UILabel alloc] initWithFrame :CGRectMake(0,self.view.frame.size.height/2-200,self.view.frame.size.width,90)];
     warnnigLabel.numberOfLines = 3;
-    warnnigLabel.text = @"在电脑浏览器打开 \n www.oncom.cn \n将二维码/条形码放入框内，即可自动扫描";
+    warnnigLabel.text = @"在电脑浏览器打开 \n www.xxx.cn \n将二维码/条形码放入框内，即可自动扫描";
     warnnigLabel.textColor = [UIColor whiteColor];
     warnnigLabel.textAlignment = NSTextAlignmentCenter;
     
